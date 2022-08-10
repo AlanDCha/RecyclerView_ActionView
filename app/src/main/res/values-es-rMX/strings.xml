@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_title">Hola Mundo</string>
+    <string name="text_button_click">Click</string>
+    <string name="message">Favorito</string>
+    <string name="action_text">Acción</string>
+    <string name="card_description">Esta es la version que fue incluida en el Material Design</string>
+    <string name="card_description">Esta es la version que fue incluida en el Material Design</string>
+</resources>

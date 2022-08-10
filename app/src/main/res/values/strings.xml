@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name" translatable="false">Pentagrama</string>
+    <string name="app_title">Hello World</string>
+    <string name="text_button_click">Click</string>
+    <string name="text_fButton_click" translatable="false">+</string>
+    <string name="message">Favorite</string>
+    <string name="action_text">Action</string>
+    <string-array name="planets">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
+    <string name="card_title" translatable="false">Android 12</string>
+    <string name="card_description">This is the version what was included on Material Design</string>
+</resources>
