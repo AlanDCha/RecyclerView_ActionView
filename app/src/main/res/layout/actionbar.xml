@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/purple_700">
+
+    <TextView
+        android:id="@+id/fabCounter"
+        android:background="@drawable/star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding"
+        android:text="@string/counter"
+        android:textAlignment="center"
+        android:textSize="@dimen/text"
+        android:translationX="@dimen/translation"
+        android:onClick="goSecondActivity"
+        />
+
+
+</androidx.appcompat.widget.Toolbar>

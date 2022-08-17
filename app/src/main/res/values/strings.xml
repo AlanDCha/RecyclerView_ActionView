@@ -15,6 +15,16 @@
         <item>Uranus</item>
         <item>Neptune</item>
     </string-array>
+<!--    Card -->
     <string name="card_title" translatable="false">Android 12</string>
     <string name="card_description">This is the version what was included on Material Design</string>
+
+<!--    Description -->
+    <string name="image">Image</string>
+    <string name="name">Name</string>
+    <string name="counter">5</string>
+
+<!--    Menu options-->
+    <string name="about">About</string>
+    <string name="settings">Settings</string>
 </resources>

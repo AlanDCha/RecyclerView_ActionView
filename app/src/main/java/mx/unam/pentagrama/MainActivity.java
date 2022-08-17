@@ -1,45 +1,72 @@
 package mx.unam.pentagrama;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+
+import mx.unam.pentagrama.adapters.MascotaAdapter;
+import mx.unam.pentagrama.pojo.Mascota;
 
 public class MainActivity extends AppCompatActivity {
 
-    SwipeRefreshLayout sfMyRefreshIndicator;
-    ListView myList;
+    private ArrayList<Mascota> mascotas;
+    private RecyclerView rvMascotas;
+    public MascotaAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Toolbar myActionBar = (Toolbar) findViewById(R.id.myActionBar);
+        setSupportActionBar(myActionBar);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        addFav();
 
-        sfMyRefreshIndicator = findViewById(R.id.sfMyRefreshIndicator);
-        myList = findViewById(R.id.lstMyListView);
+        rvMascotas = findViewById(R.id.rvContacts);
+        LinearLayoutManager llm = new LinearLayoutManager(this);
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
 
-        String[] planets = getResources().getStringArray(R.array.planets);
-        myList.setAdapter(new ArrayAdapter<>(this, R.layout.simple_list_item_1, planets));
-        sfMyRefreshIndicator.setOnRefreshListener(this::refreshingContent);
+        rvMascotas.setLayoutManager(llm);
+        initMascotaList();
+        initAdapter();
     }
 
-    public void refreshingContent(){
-        String[] planets = getResources().getStringArray(R.array.planets);
-        myList.setAdapter(new ArrayAdapter<>(this, R.layout.simple_list_item_1, planets));
-        sfMyRefreshIndicator.setRefreshing(false);
+    public void initAdapter(){
+        adapter = new MascotaAdapter(mascotas);
+        rvMascotas.setAdapter(adapter);
     }
 
-    public void addFav() {
-        FloatingActionButton myFav = findViewById(R.id.favMyFav);
-        myFav.setOnClickListener(view -> Snackbar.make(view,
-            getResources().getString(R.string.message), Snackbar.LENGTH_SHORT)
-                .setAction(getResources().getString(R.string.action_text),
-                    view1 -> Log.i("SnackBar", "Click en SnackBar"))
-                .show());
+    public void initMascotaList(){
+
+        mascotas = new ArrayList<>();
+
+        mascotas.add(new Mascota(R.drawable.gato1, "Pedro", "4"));
+        mascotas.add(new Mascota(R.drawable.gato2, "Pablo", "5"));
+        mascotas.add(new Mascota(R.drawable.gato3, "Alvin", "3"));
+        mascotas.add(new Mascota(R.drawable.gato4, "Isaac", "2"));
+        mascotas.add(new Mascota(R.drawable.gato5, "Alana", "4"));
+        mascotas.add(new Mascota(R.drawable.gato6, "Santo", "5"));
+        mascotas.add(new Mascota(R.drawable.gato7, "Louis", "3"));
+        mascotas.add(new Mascota(R.drawable.gato8, "Georg", "2"));
+        mascotas.add(new Mascota(R.drawable.gato9, "Gallo", "1"));
+        mascotas.add(new Mascota(R.drawable.gato10, "Mario", "5"));
     }
+
+    public void goSecondActivity(View view){
+
+        mascotas.removeIf(mascota -> Integer.parseInt(mascota.getRating()) < 4);
+        
+        Intent intent = new Intent(this, ListadoMascotas.class);
+        intent.putExtra("mascotas", mascotas);
+        startActivity(intent);
+    }
+
 }

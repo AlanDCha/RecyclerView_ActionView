@@ -15,7 +15,13 @@
         tools:targetApi="31">
         <activity
             android:name=".ListadoMascotas"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"
+                >
+            </meta-data>
         <activity
             android:name=".MainActivity"
             android:exported="true">
