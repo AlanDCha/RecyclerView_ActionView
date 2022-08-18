@@ -3,7 +3,7 @@
 
 ## App gif
 
-![gif](https://www.github.com/AlanDCha/RecyclerView_ActionView/blob/main/imgs/application.gif)
+![gif](https://github.com/AlanDCha/RecyclerView_ActionView/blob/main/imgs/application.gif)
 
 ## Screenshots
 
