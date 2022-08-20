@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="mx.unam.pentagrama">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,14 +16,25 @@
         android:theme="@style/Theme.Pentagrama"
         tools:targetApi="31">
         <activity
-            android:name=".ListadoMascotas"
+            android:name=".Biography"
+            android:exported="false"
             android:parentActivityName=".MainActivity"
-            android:exported="false" />
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"
-                >
-            </meta-data>
+            />
+        <activity
+            android:name=".AppForm"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            />
+        <activity
+            android:name=".ListadoMascotas"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            />
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

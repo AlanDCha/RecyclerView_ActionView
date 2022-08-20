@@ -13,9 +13,10 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/padding"
         android:text="@string/counter"
+        android:textColor="@color/white"
         android:textAlignment="center"
         android:textSize="@dimen/text"
-        android:translationX="@dimen/translation"
+        android:translationX="150dp"
         android:onClick="goSecondActivity"
         />
 

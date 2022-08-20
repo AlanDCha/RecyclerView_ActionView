@@ -15,28 +15,15 @@ public class Mascota implements Serializable {
         this.rating = rating;
     }
 
-    public int getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(int photo) {
+    public Mascota(int photo, String rating) {
         this.photo = photo;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getRating() {
-        return rating;
-    }
-
-    public void setRating(String rating) {
         this.rating = rating;
     }
+
+    public int getPhoto() { return photo; }
+
+    public String getName() { return name; }
+
+    public String getRating() { return rating; }
 
 }

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/mAbout"
-        android:title="@string/about"
+        android:id="@+id/mContact"
+        android:title="@string/contact"
         android:orderInCategory="100"
         >
 
     </item>
     <item
-        android:id="@+id/mSettings"
-        android:title="@string/settings"
+        android:id="@+id/mAbout"
+        android:title="@string/about"
         android:orderInCategory="110"
         >
 

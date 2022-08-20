@@ -12,13 +12,19 @@
         >
     </include>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvContacts"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/myActionBar"
-        android:padding="20dp"
         />
 
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="800dp"
+        android:layout_marginTop="100dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        />
 
 </RelativeLayout>

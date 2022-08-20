@@ -12,13 +12,9 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <!--        window action bar-->
         <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
-
-    <style name="MyButtonRaised" parent="Theme.AppCompat.Light">
-        <item name="colorPrimary">@color/teal_200</item>
-        <item name="colorControlHighlight">@color/black</item>
-        <item name="android:textColor">@color/white</item>
-    </style>
-
 </resources>

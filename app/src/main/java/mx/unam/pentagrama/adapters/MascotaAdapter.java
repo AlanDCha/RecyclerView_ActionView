@@ -21,8 +21,9 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
     ArrayList<Mascota> mascotas;
     Activity activity;
 
-    public MascotaAdapter(ArrayList<Mascota> mascotas ) {
+    public MascotaAdapter(ArrayList<Mascota> mascotas, Activity activity ) {
         this.mascotas = mascotas;
+        this.activity = activity;
     }
 
     @NonNull
@@ -38,14 +39,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
         holder.imgPhoto.setImageResource(mascota.getPhoto());
         holder.tvRatingCV.setText(mascota.getRating());
         holder.tvNameCV.setText(mascota.getName());
-
-//        holder.imgBone.setOnClickListener(v -> {
-//            Toast.makeText(activity, "You liked to " + mascota.getName(),
-//                    Toast.LENGTH_SHORT).show();
-//        });
-
         holder.imgBone.setOnClickListener(v -> Toast.makeText(v.getContext(), "You liked to: " + mascota.getName(), Toast.LENGTH_SHORT).show());
-
     }
 
     @Override
@@ -54,19 +48,19 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
     }
 
     public static class MascotaViewHolder extends RecyclerView.ViewHolder {
-        private ImageView imgPhoto;
-        private TextView tvNameCV;
+        private ImageView   imgPhoto;
+        private TextView    tvNameCV;
         private ImageButton imgBone;
-        private TextView tvRatingCV;
-        private ImageView imgRating;
+        private TextView    tvRatingCV;
+        private ImageView   imgRating;
 
         public MascotaViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgPhoto   = (ImageView)   itemView.findViewById(R.id.imgPhoto);
-            imgBone    = (ImageButton) itemView.findViewById(R.id.imgBone);
-            imgRating  = (ImageView)   itemView.findViewById(R.id.imgRating);
-            tvNameCV   = (TextView)    itemView.findViewById(R.id.tvNameCV);
-            tvRatingCV = (TextView)    itemView.findViewById(R.id.tvRatingCV);
+            imgPhoto   = itemView.findViewById(R.id.imgPhoto);
+            imgBone    = itemView.findViewById(R.id.imgBone);
+            imgRating  = itemView.findViewById(R.id.imgRating);
+            tvNameCV   = itemView.findViewById(R.id.tvNameCV);
+            tvRatingCV = itemView.findViewById(R.id.tvRatingCV);
         }
     }
 }

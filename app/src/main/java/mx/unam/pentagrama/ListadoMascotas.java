@@ -42,7 +42,7 @@ public class ListadoMascotas extends AppCompatActivity {
     }
 
     public void initAdapter(){
-        adapter = new MascotaAdapter(mascotas);
+        adapter = new MascotaAdapter(mascotas, this);
         rvMascotas.setAdapter(adapter);
     }
 
