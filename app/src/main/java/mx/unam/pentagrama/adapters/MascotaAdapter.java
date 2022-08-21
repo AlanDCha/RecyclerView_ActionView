@@ -37,7 +37,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
     public void onBindViewHolder(@NonNull MascotaViewHolder holder, int position) {
         Mascota mascota = mascotas.get(position);
         holder.imgPhoto.setImageResource(mascota.getPhoto());
-        holder.tvRatingCV.setText(mascota.getRating());
+        holder.tvRatingCV.setText(String.valueOf(mascota.getNumLikes()));
         holder.tvNameCV.setText(mascota.getName());
         holder.imgBone.setOnClickListener(v -> Toast.makeText(v.getContext(), "You liked to: " + mascota.getName(), Toast.LENGTH_SHORT).show());
     }

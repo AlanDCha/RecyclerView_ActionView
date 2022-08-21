@@ -17,12 +17,14 @@ import mx.unam.pentagrama.ListadoMascotas;
 import mx.unam.pentagrama.R;
 import mx.unam.pentagrama.adapters.MascotaAdapter;
 import mx.unam.pentagrama.pojo.Mascota;
+import mx.unam.pentagrama.presenter.IRecyclerViewFragmentPresenter;
+import mx.unam.pentagrama.presenter.RecyclerViewFragmentPresenter;
 
-public class RecyclerViewFragment extends Fragment {
+public class RecyclerViewFragment extends Fragment implements IRecyclerViewFragmentView{
 
     private ArrayList<Mascota> mascotas;
     private RecyclerView rvMascotas;
-    public MascotaAdapter adapter;
+    private IRecyclerViewFragmentPresenter presenter;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -47,32 +49,26 @@ public class RecyclerViewFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_recycler_view, container, false);
         rvMascotas = v.findViewById(R.id.rvContacts);
-        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        rvMascotas.setLayoutManager(llm);
-        initMascotaList();
-        initAdapter();
+        presenter = new RecyclerViewFragmentPresenter(this, getContext());
         return v;
     }
 
-    private void initAdapter(){
-        adapter = new MascotaAdapter(mascotas, getActivity());
-        rvMascotas.setAdapter(adapter);
+    @Override
+    public void generateLinearLayoutVertical() {
+        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        rvMascotas.setLayoutManager(llm);
     }
 
-    public void initMascotaList(){
+    @Override
+    public MascotaAdapter createAdapter(ArrayList<Mascota> mascotas) {
+        MascotaAdapter adapter;
+        adapter = new MascotaAdapter(mascotas, getActivity());
+        return adapter;
+    }
 
-        mascotas = new ArrayList<>();
-
-        mascotas.add(new Mascota(R.drawable.gato1, "Pedro", "4"));
-        mascotas.add(new Mascota(R.drawable.gato2, "Pablo", "5"));
-        mascotas.add(new Mascota(R.drawable.gato3, "Alvin", "3"));
-        mascotas.add(new Mascota(R.drawable.gato4, "Isaac", "2"));
-        mascotas.add(new Mascota(R.drawable.gato5, "Alana", "4"));
-        mascotas.add(new Mascota(R.drawable.gato6, "Santo", "5"));
-        mascotas.add(new Mascota(R.drawable.gato7, "Louis", "3"));
-        mascotas.add(new Mascota(R.drawable.gato8, "Georg", "2"));
-        mascotas.add(new Mascota(R.drawable.gato9, "Gallo", "1"));
-        mascotas.add(new Mascota(R.drawable.gato10, "Mario", "5"));
+    @Override
+    public void initAdapterRV(MascotaAdapter adapter) {
+        rvMascotas.setAdapter(adapter);
     }
 }
