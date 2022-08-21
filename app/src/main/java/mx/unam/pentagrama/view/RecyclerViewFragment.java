@@ -1,6 +1,5 @@
-package mx.unam.pentagrama.fragments;
+package mx.unam.pentagrama.view;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,10 +12,9 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-import mx.unam.pentagrama.ListadoMascotas;
 import mx.unam.pentagrama.R;
 import mx.unam.pentagrama.adapters.MascotaAdapter;
-import mx.unam.pentagrama.pojo.Mascota;
+import mx.unam.pentagrama.model.Mascota;
 import mx.unam.pentagrama.presenter.IRecyclerViewFragmentPresenter;
 import mx.unam.pentagrama.presenter.RecyclerViewFragmentPresenter;
 

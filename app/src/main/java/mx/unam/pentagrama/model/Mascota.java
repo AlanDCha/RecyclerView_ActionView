@@ -1,4 +1,4 @@
-package mx.unam.pentagrama.pojo;
+package mx.unam.pentagrama.model;
 
 
 import java.io.Serializable;

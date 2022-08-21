@@ -2,9 +2,9 @@ package mx.unam.pentagrama.presenter;
 
 import android.content.Context;
 import java.util.ArrayList;
-import mx.unam.pentagrama.database.ConstructorMascotas;
-import mx.unam.pentagrama.fragments.IRecyclerViewFragmentView;
-import mx.unam.pentagrama.pojo.Mascota;
+import mx.unam.pentagrama.model.ConstructorMascotas;
+import mx.unam.pentagrama.view.IRecyclerViewFragmentView;
+import mx.unam.pentagrama.model.Mascota;
 
 public class RecyclerViewFragmentPresenter implements IRecyclerViewFragmentPresenter{
 

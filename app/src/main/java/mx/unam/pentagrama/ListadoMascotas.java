@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import mx.unam.pentagrama.adapters.MascotaAdapter;
-import mx.unam.pentagrama.pojo.Mascota;
+import mx.unam.pentagrama.model.Mascota;
 
 public class ListadoMascotas extends AppCompatActivity {
 

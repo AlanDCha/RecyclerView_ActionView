@@ -1,15 +1,15 @@
-package mx.unam.pentagrama.database;
+package mx.unam.pentagrama.model;
 
 import android.content.ContentValues;
 import android.content.Context;
-
 import java.util.ArrayList;
-
 import mx.unam.pentagrama.R;
-import mx.unam.pentagrama.pojo.Mascota;
+import mx.unam.pentagrama.database.AuxDatabase;
+import mx.unam.pentagrama.database.ConstantDatabase;
 
 public class ConstructorMascotas {
 
+    private static final int LIKE = 1;
     private Context context;
 
     public ConstructorMascotas(Context context) {
@@ -30,5 +30,18 @@ public class ConstructorMascotas {
             contentValues.put(ConstantDatabase.TABLE_CONTACTS_PHOTO, R.drawable.gato4);
             db.insertMascota(contentValues);
         }
+    }
+    
+    public void giveLikeMascota(Mascota mascota){
+        AuxDatabase db = new AuxDatabase(context);
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(ConstantDatabase.TABLE_LIKES_CONTACT_ID_CONTACT, mascota.getId());
+        contentValues.put(ConstantDatabase.TABLE_LIKES_CONTACT_NUMBER_LIKES, LIKE);
+        db.insertLikeMascota(contentValues);
+    }
+
+    public int getLikeMascota(Mascota mascota){
+        AuxDatabase db = new AuxDatabase(context);
+        return db.getLikeMascota(mascota);
     }
 }

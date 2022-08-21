@@ -1,9 +1,9 @@
-package mx.unam.pentagrama.fragments;
+package mx.unam.pentagrama.view;
 
 import java.util.ArrayList;
 
 import mx.unam.pentagrama.adapters.MascotaAdapter;
-import mx.unam.pentagrama.pojo.Mascota;
+import mx.unam.pentagrama.model.Mascota;
 
 public interface IRecyclerViewFragmentView {
 

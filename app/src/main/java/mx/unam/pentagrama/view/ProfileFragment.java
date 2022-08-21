@@ -1,4 +1,4 @@
-package mx.unam.pentagrama.fragments;
+package mx.unam.pentagrama.view;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import mx.unam.pentagrama.R;
 import mx.unam.pentagrama.adapters.ProfileAdapter;
-import mx.unam.pentagrama.pojo.Mascota;
+import mx.unam.pentagrama.model.Mascota;
 
 public class ProfileFragment extends Fragment {
 

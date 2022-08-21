@@ -48,8 +48,8 @@ public class AppForm extends AppCompatActivity {
         button    = findViewById(R.id.button);
 
         // Sender email credential
-        username = "didier.ominguez@gmail.com";
-        password = "aliersgs7e";
+        username = "your_mail@example.com";
+        password = "your_password";
 
         button.setOnClickListener(v -> {
             // Initialize properties

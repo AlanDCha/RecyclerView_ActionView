@@ -1,7 +1,6 @@
 package mx.unam.pentagrama.adapters;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +11,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import mx.unam.pentagrama.ListadoMascotas;
+
 import mx.unam.pentagrama.R;
-import mx.unam.pentagrama.pojo.Mascota;
+import mx.unam.pentagrama.model.ConstructorMascotas;
+import mx.unam.pentagrama.model.Mascota;
 
 public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaViewHolder>{
 
@@ -29,7 +29,8 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
     @NonNull
     @Override
     public MascotaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_contact, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_contact, parent,
+                false);
         return new MascotaViewHolder(v);
     }
 
@@ -39,7 +40,15 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
         holder.imgPhoto.setImageResource(mascota.getPhoto());
         holder.tvRatingCV.setText(String.valueOf(mascota.getNumLikes()));
         holder.tvNameCV.setText(mascota.getName());
-        holder.imgBone.setOnClickListener(v -> Toast.makeText(v.getContext(), "You liked to: " + mascota.getName(), Toast.LENGTH_SHORT).show());
+        holder.imgBone.setOnClickListener(v -> {
+            Toast.makeText(v.getContext(), "You liked to: " + mascota.getName(),
+                    Toast.LENGTH_SHORT).show();
+
+            ConstructorMascotas constructorMascotas = new ConstructorMascotas(activity);
+            constructorMascotas.giveLikeMascota(mascota);
+
+            holder.tvRatingCV.setText(String.valueOf(constructorMascotas.getLikeMascota(mascota)));
+        });
     }
 
     @Override

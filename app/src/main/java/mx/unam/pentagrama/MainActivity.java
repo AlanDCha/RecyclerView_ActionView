@@ -8,11 +8,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
@@ -20,11 +18,10 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
-import mx.unam.pentagrama.adapters.MascotaAdapter;
 import mx.unam.pentagrama.adapters.PageAdapter;
-import mx.unam.pentagrama.fragments.ProfileFragment;
-import mx.unam.pentagrama.fragments.RecyclerViewFragment;
-import mx.unam.pentagrama.pojo.Mascota;
+import mx.unam.pentagrama.view.ProfileFragment;
+import mx.unam.pentagrama.view.RecyclerViewFragment;
+import mx.unam.pentagrama.model.Mascota;
 
 public class MainActivity extends AppCompatActivity {
 

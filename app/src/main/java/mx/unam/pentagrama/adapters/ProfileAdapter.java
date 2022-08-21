@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import mx.unam.pentagrama.R;
-import mx.unam.pentagrama.pojo.Mascota;
+import mx.unam.pentagrama.model.Mascota;
 
 public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ProfileViewHoler>{
 
